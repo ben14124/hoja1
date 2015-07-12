@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Driver;
+
 
 /**
  *
  * @author dbs_jd
  */
-public interface Interfaz {
+public abstract interface Interfaz {
 	
 	public void setESTADO(boolean ESTADO);
 	
