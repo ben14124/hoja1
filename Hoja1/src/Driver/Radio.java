@@ -10,5 +10,5 @@ package Driver;
  * @author dbs_jd
  */
 public class Radio implements Interfaz {
-    
+        System.out.println("Holaaa");
 }
