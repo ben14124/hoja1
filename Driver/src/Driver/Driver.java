@@ -10,7 +10,6 @@ package Driver;
  * @author dbs_jd
  */
 public class Driver {
-
     /**
      * @param args the command line arguments
      */
@@ -18,5 +17,4 @@ public class Driver {
         //Cambio: JD
         System.out.println("Holaaa");
     }
-    
 }
