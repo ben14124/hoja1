@@ -53,13 +53,19 @@ public class Radio implements Interfaz {
 
 					if(subirbajar==1){
 						if(Band==0){ //Si lo que mandamos antes fue un 0...
+							if(AM == 1610){
+								AM = 520;
+							}
 							AM = AM + 10;
-							System.out.println("Usted se encuentra en la estacion "+AM+"\n");
+							System.out.println(AM);
 						}
 
 						else if (Band==1){ //Si lo que mandamos antes fue un 1...
+							if(FM == 107.9000){
+								FM = 87.7000;
+							}
 							FM = FM + 0.2000;
-							System.out.println("Usted se encuentra en la estacion "+FM+"\n");
+							System.out.println(FM);
 						}
 						
 					} 
@@ -86,12 +92,18 @@ public class Radio implements Interfaz {
 					if (subirbajar==2){
 
 						if(Band==0){
+							if(AM == 530){
+								AM = 1620;
+							}
 							AM = AM - 10;
-							System.out.println("Usted se encuentra en la estacion "+AM+"\n");
+							System.out.println(AM);
 						}
 						else if (Band==1){
+							if(FM == 87.9000){
+								FM = 108.1000;
+							}
 							FM = FM - 0.2000;
-							System.out.println("Usted se encuentra en la estacion "+FM+"\n");
+							System.out.println(FM);
 						}
 					}
 
