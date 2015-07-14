@@ -11,6 +11,7 @@
 public abstract interface Interfaz {
 	
 	public void setESTADO(boolean ESTADO);
+        //
 	
 	public boolean getEstado();
 	
