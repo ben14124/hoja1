@@ -1,4 +1,4 @@
-/*
+//**
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -35,7 +35,7 @@ public class Radio implements Interfaz {
 	}
 	
 	public int getAMFM(){
-		return Pos;
+            return Band;
 	}
 	
 	public void setAMFM(int Band){ //Sirve para preguntar en el driver si es AM o FM (0 y 1 respectivamente)
@@ -57,15 +57,15 @@ public class Radio implements Interfaz {
 								AM = 520;
 							}
 							AM = AM + 10;
-							System.out.println(AM);
+							System.out.println("\nLa emisora sintonizada es la "+AM);
 						}
 
 						else if (Band==1){ //Si lo que mandamos antes fue un 1...
-							if(FM == 107.9000){
-								FM = 87.7000;
+							if(FM == 107.9){
+								FM = 87.7;
 							}
-							FM = FM + 0.2000;
-							System.out.println(FM);
+							FM = FM + 0.2;
+							System.out.println("\nLa emisora sintonizada es la "+FM);
 						}
 						
 					} 
@@ -78,7 +78,6 @@ public class Radio implements Interfaz {
 					else if (subirbajar==3){
 						sintonizacion = false;
 						movimiento = false;
-						System.out.println("Sali");
 					}
 
 				} //Corchete del while
@@ -96,14 +95,14 @@ public class Radio implements Interfaz {
 								AM = 1620;
 							}
 							AM = AM - 10;
-							System.out.println(AM);
+							System.out.println("\nLa emisora sintonizada es la "+AM);
 						}
 						else if (Band==1){
-							if(FM == 87.9000){
-								FM = 108.1000;
+							if(FM == 87.9){
+								FM = 108.1;
 							}
-							FM = FM - 0.2000;
-							System.out.println(FM);
+							FM = FM - 0.2;
+							System.out.println("\nLa emisora sintonizada es la "+FM);
 						}
 					}
 
