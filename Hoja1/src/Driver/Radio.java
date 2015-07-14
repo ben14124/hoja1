@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 /**
  *
- * @author Daniela, Juan Diego, Alejandro
+ * @author dbs_jd
  */
 public class Radio implements Interfaz {
 
@@ -42,10 +42,9 @@ public class Radio implements Interfaz {
 	}
 	
 	public void Sintonizar(boolean uD){ //uD si es AM o FM
-
 		while (sintonizacion==true){
 			if (uD==true){ //Si se desea subir
-				System.out.println("Ingrese 1 si desea seguir subiendo, 2 para bajar y 3 para salir. ");
+				System.out.println("\nIngrese 1 si desea seguir subiendo, 2 para bajar y 3 para salir. ");
 				while(uD==true){
 					subirbajar = escaner.nextInt(); //Esto va dentro del while porque hace la "pausa" en 'el (' = tilde)
 					//Aqui iria un try-catch
@@ -53,12 +52,12 @@ public class Radio implements Interfaz {
 					if(subirbajar==1){
 						if(Band==0){ //Si lo que mandamos antes fue un 0...
 							AM = AM + 10;
-							System.out.println(AM);
+							System.out.println("Usted se encuentra en la estacion "+AM+"\n");
 						}
 
 						else if (Band==1){ //Si lo que mandamos antes fue un 1...
 							FM = FM + 0.2000;
-							System.out.println(FM);
+							System.out.println("Usted se encuentra en la estacion "+FM+"\n");
 						}
 						
 					} 
@@ -78,7 +77,7 @@ public class Radio implements Interfaz {
 
 			}
 			if (uD==false){ //habria que comprobar si el uD de arriba, al pasar a false se mueve directamente a este. REMOVI ELSE
-				System.out.println("Ingrese 2 si desea seguir bajando, 1 para subir y 3 para salir. ");
+				System.out.println("\nIngrese 2 si desea seguir bajando, 1 para subir y 3 para salir. ");
 				while(uD==false){
 					subirbajar = escaner.nextInt(); //Esto va dentro del while porque hace la "pausa" en 'el (' = tilde)
 					//Aqui iria un try-catch
@@ -86,11 +85,11 @@ public class Radio implements Interfaz {
 
 						if(Band==0){
 							AM = AM - 10;
-							System.out.println(AM);
+							System.out.println("Usted se encuentra en la estacion "+AM+"\n");
 						}
 						else if (Band==1){
 							FM = FM - 0.2000;
-							System.out.println(FM);
+							System.out.println("Usted se encuentra en la estacion "+FM+"\n");
 						}
 					}
 
@@ -110,17 +109,17 @@ public class Radio implements Interfaz {
 	
 	public void Guardar(int Pos){ //En el driver preguntamos la posicion en la que vamos a almacenar 
 		
-		if (Band==1){
-			Emisoras[Pos] = AM;
+		if (Band==0){
+			Emisoras[Pos-1] = AM;
 		}
 
-		else if (Band==2){
-			Emisoras[Pos] = FM;
+		else if (Band==1){
+			Emisoras[Pos-1] = FM;
 		}
 	}
 	
 	public void Memoria(int Pos){
-		regreso = Emisoras[Pos];
+		regreso = Emisoras[Pos-1];
 	}
 
 	public double getEmisora(){
