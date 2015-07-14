@@ -44,31 +44,6 @@ public class Radio implements Interfaz {
 	
 	public void Sintonizar(boolean uD){ //uD si es AM o FM
 
-		//-----------------------------------------------
-		// YA NO ES ASI -----1 es subir y 0 bajar, 2 es guardar, cuando se llega a la estacion deseada se presiona 2 y se sale del while
-		/*if (uD==true){
-			System.out.println("Ingrese 1 si desea subir de estacion, 0 para bajar y 2 para guardar. ");
-			try{
-				Band = escaner.nextInt();
-				while (Band!=2){ //try-catch aqui
-					Band = escaner.nextInt();
-					if (Band==1){ //hacer los ifs para los rangos
-						AM = AM + 10;
-					}
-					else if (Band==0){
-						AM = AM - 10;
-					}
-					else if (Band==2){
-
-					}
-				}
-			}
-			catch (Exception e){
-				System.out.println("Por favor ingrese una opcion valida. \n Ingrese 1 si desea subir de estacion, 0 para bajar y 2 para guardar. ");
-			}
-			
-		}*/ //-------------------------------------------
-
 		while (sintonizacion==true){
 			if (uD==true){ //Si se desea subir
 				System.out.println("Ingrese 1 si desea seguir subiendo, 2 para bajar y 3 para salir. ");
@@ -104,11 +79,11 @@ public class Radio implements Interfaz {
 
 			}
 			if (uD==false){ //habria que comprobar si el uD de arriba, al pasar a false se mueve directamente a este. REMOVI ELSE
-				System.out.println("Ingrese 0 si desea seguir bajando, 1 para subir y 2 para salir. ");
+				System.out.println("Ingrese 2 si desea seguir bajando, 1 para subir y 3 para salir. ");
 				while(uD==false){
 					subirbajar = escaner.nextInt(); //Esto va dentro del while porque hace la "pausa" en 'el (' = tilde)
 					//Aqui iria un try-catch
-					if (subirbajar==0){
+					if (subirbajar==2){
 
 						if(Band==0){
 							AM = AM - 10;
@@ -124,17 +99,14 @@ public class Radio implements Interfaz {
 						uD = true;
 					}
 
-					else if (subirbajar==2){
+					else if (subirbajar==3){
 						sintonizacion = false;
+                                                uD = true;
 					}
 
 				} //Corchete del while
 			}
 		} //sintonizacion
-
-
-
-		
 	}
 	
 	public void Guardar(int Pos){ //En el driver preguntamos la posicion en la que vamos a almacenar 
@@ -154,7 +126,5 @@ public class Radio implements Interfaz {
 
 	public double getEmisora(){
 		return regreso;
-	}
-
-    
+	}   
 }
