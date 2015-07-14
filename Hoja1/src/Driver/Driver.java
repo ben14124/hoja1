@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 /**
  *
- * @author dbs_jd
+ * @author Daniela, Alejandro, Juan Diego
  */
 public class Driver {
 
@@ -17,7 +17,9 @@ public class Driver {
         int funcionamiento = 0;
         int posicion;
         int estacion;
-        Radio Alejuadiela = new Radio();
+        
+        RadioCarro Alejuadiela = new RadioCarro();
+        
         Scanner escaner = new Scanner(System.in);
         while (funcionamiento==0){
             try{
@@ -59,6 +61,8 @@ public class Driver {
                     if (banda==2){ //Mandamos false para bajar
                         Alejuadiela.Sintonizar(false);
                     }
+                    
+                    System.out.println("La radio sintonizada es la "+Alejuadiela.getEmisora());
                     
                     System.out.println("\nDesea guardar la radio sintonizada? Si(1). No(2). Salir (3)"); //se pregunta si se desea guardar la radio sintonizada
                     posicion = escaner.nextInt();
