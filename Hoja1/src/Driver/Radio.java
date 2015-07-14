@@ -1,8 +1,8 @@
-//**
+/**
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+ **/
 
 import java.util.Scanner;
 import java.util.Arrays;
@@ -61,7 +61,7 @@ public class Radio implements Interfaz {
 						}
 
 						else if (Band==1){ //Si lo que mandamos antes fue un 1...
-							if(FM == 107.9){
+							if(FM >= 107.9){
 								FM = 87.7;
 							}
 							FM = FM + 0.2;
@@ -98,7 +98,7 @@ public class Radio implements Interfaz {
 							System.out.println("\nLa emisora sintonizada es la "+AM);
 						}
 						else if (Band==1){
-							if(FM == 87.9){
+							if(FM <= 87.9){
 								FM = 108.1;
 							}
 							FM = FM - 0.2;
