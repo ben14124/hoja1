@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 /**
  *
- * @author dbs_jd
+ * @author Daniela, Alejandro, JuanDiego
  */
 public class Radio implements Interfaz {
 
@@ -24,6 +24,7 @@ public class Radio implements Interfaz {
 	String ingreso;
 	int subirbajar; //Variable para pedir si se desea subir o bajar
 	boolean sintonizacion = true;
+        boolean movimiento = true;
 
 	public void setESTADO(boolean ESTADO){
 		this.ESTADO = ESTADO;
@@ -43,9 +44,10 @@ public class Radio implements Interfaz {
 	
 	public void Sintonizar(boolean uD){ //uD si es AM o FM
 		while (sintonizacion==true){
+                        movimiento = uD;
 			if (uD==true){ //Si se desea subir
 				System.out.println("\nIngrese 1 si desea seguir subiendo, 2 para bajar y 3 para salir. ");
-				while(uD==true){
+				while(movimiento==true){
 					subirbajar = escaner.nextInt(); //Esto va dentro del while porque hace la "pausa" en 'el (' = tilde)
 					//Aqui iria un try-catch
 
@@ -61,24 +63,24 @@ public class Radio implements Interfaz {
 						}
 						
 					} 
-					
 
 					else if (subirbajar==2){ //si desea bajar
 						uD = false;
+                                                movimiento = false;
 					}
 
 					else if (subirbajar==3){
 						sintonizacion = false;
-						uD = false;
+						movimiento = false;
 						System.out.println("Sali");
 					}
 
 				} //Corchete del while
-
 			}
+                        
 			if (uD==false){ //habria que comprobar si el uD de arriba, al pasar a false se mueve directamente a este. REMOVI ELSE
 				System.out.println("\nIngrese 2 si desea seguir bajando, 1 para subir y 3 para salir. ");
-				while(uD==false){
+				while(movimiento==false){
 					subirbajar = escaner.nextInt(); //Esto va dentro del while porque hace la "pausa" en 'el (' = tilde)
 					//Aqui iria un try-catch
 					if (subirbajar==2){
@@ -93,13 +95,15 @@ public class Radio implements Interfaz {
 						}
 					}
 
-					else if (subirbajar==1){ //si desea bajar /////Habria que meterlo todo en un while
+					else if (subirbajar==1){ //si desea subir
 						uD = true;
+                                                movimiento = true;
 					}
 
 					else if (subirbajar==3){
 						sintonizacion = false;
                                                 uD = true;
+                                                movimiento = true;
 					}
 
 				} //Corchete del while
