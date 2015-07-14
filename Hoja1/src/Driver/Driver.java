@@ -8,14 +8,14 @@ import java.util.Arrays;
 
 /**
  *
- * @author dbs_jd
+ * @author JuanDiego, Daniela, Alejandro
  */
 public class Driver {
 
     public static void main(String[] args) { //
         int banda;
         int funcionamiento = 0;
-        boolean frecuencia = true;
+        int posicion;
         Radio Alejuadiela = new Radio();
         Scanner escaner = new Scanner(System.in);
         while (funcionamiento==0){
@@ -36,8 +36,10 @@ public class Driver {
                     }
                     
                     else if (banda==3){
-                        funcionamiento = 3;
+                        funcionamiento = 3; //se sale de la radio
                     }
+                    
+                    //se pregunta si se desea subir o bajar la primera vez
                     System.out.println("Desea subir o bajar?: \nSubir (1) \nBajar (2) \nSalir (3)");
                     banda = escaner.nextInt();
 
@@ -49,18 +51,32 @@ public class Driver {
                         Alejuadiela.Sintonizar(false);
                     }
                     
+                    System.out.println("Desea guardar la radio sintonizada? Si(1). No(2). Salir (3)"); //se pregunta si se desea guardar la radio sintonizada
+                    posicion = escaner.nextInt();
+                    
+                    if(posicion == 1){ //si se desea guardar
+                        System.out.println("En que posicion lo desea almacenar? 1-12"); //pregunta posicion en la que se guarda
+                        posicion = escaner.nextInt();
+                        
+                        Alejuadiela.Guardar(posicion); //se guarda en array
+                        Alejuadiela.Memoria(posicion); //se coloca en una variable la emisora almacenada en cierta posicion
+                        System.out.println("La emisora guardada en la posicion "+posicion+" es "+Alejuadiela.getEmisora()); //se muestra en que posicion se guardó la emisora
+                    }
+                    
+                    else if(posicion == 2){
+                        funcionamiento = 3;
+                    }
+                    
                 }
                 else if (ingreso==2){ //Salida
                     funcionamiento = 3;
                 }
-
+                
             }
             catch (Exception e){
                 System.out.println("Por favor ingrese una opcion valida.");
             }
         }
         System.out.println("Gracias por usar la radio.");
-
     }
-    
 }
