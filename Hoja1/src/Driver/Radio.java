@@ -7,10 +7,9 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
-
 /**
  *
- * @author dbs_jd
+ * @author Daniela, Juan Diego, Alejandro
  */
 public class Radio implements Interfaz {
 
