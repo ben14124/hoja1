@@ -12,7 +12,7 @@
 public abstract interface Interfaz {
 	
 	public void setESTADO(boolean ESTADO);
-	//
+	
 	public boolean getEstado();
 	
 	public int getAMFM();
@@ -28,4 +28,3 @@ public abstract interface Interfaz {
 	public double getEmisora();
 	
 }
-
