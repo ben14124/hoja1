@@ -17,11 +17,11 @@ public class Driver {
         int funcionamiento = 0;
         boolean frecuencia = true;
         Radio Alejuadiela = new Radio();
-    	Scanner escaner = new Scanner(System.in);
+        Scanner escaner = new Scanner(System.in);
         while (funcionamiento==0){
-        	try{
-        		System.out.println("Bienvenido a la Radio. Ingrese una opcion: \nEncender (1) o apagar la radio (2)");
-        		int ingreso = escaner.nextInt();
+            try{
+                System.out.println("Bienvenido a la Radio. Ingrese una opcion: \nEncender (1) o apagar la radio (2)");
+                int ingreso = escaner.nextInt();
                 if (ingreso==1){
                     System.out.println("Que frecuencia desea seleccionar?: \nAM (1) \nFM (2) \nSalir (3)");
                     banda = escaner.nextInt();
@@ -54,10 +54,10 @@ public class Driver {
                     funcionamiento = 3;
                 }
 
-        	}
-        	catch (Exception e){
-        		System.out.println("Por favor ingrese una opcion valida.");
-        	}
+            }
+            catch (Exception e){
+                System.out.println("Por favor ingrese una opcion valida.");
+            }
         }
         System.out.println("Gracias por usar la radio.");
 
