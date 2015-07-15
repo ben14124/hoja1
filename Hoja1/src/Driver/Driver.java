@@ -77,7 +77,7 @@ public class Driver {
                     }
                     
                     else if(posicion == 2){
-                        funcionamiento = 3;
+                        funcionamiento = 0;
                     }
                     
                     System.out.println("\nDesea observar alguna de las radios almacenadas en memoria? Si(1). No(2). Salir (3)"); //se pregunta si se desea guardar la radio sintonizada
@@ -91,11 +91,11 @@ public class Driver {
                         System.out.println("\nLa emisora guardada en la posicion "+posicion+" es "+Alejuadiela.getEmisora()); //se muestra en que posicion se guardó la emisora
                     }
                     
-                    else if(posicion == 2){
+                    else if(posicion == 3){
                         funcionamiento = 3;
                     }
                     
-                }
+                } //If de ingreso==1
                 else if (ingreso==2){ //Salida
                     funcionamiento = 3;
                 }
