@@ -1,9 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Algoritmo y estructura de datos / Seccion 30
+ * Hoja de trabajo 1
+ * Daniela Pocasangre - 14162
+ * Alejandro Rivera - 14213
+ * Juan Diego Benitez - 14124
+ * Programa utilizado como interface.
  */
-
 
 /**
  *
