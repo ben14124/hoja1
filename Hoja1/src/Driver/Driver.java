@@ -20,7 +20,7 @@ public class Driver {
         int estacion;
         boolean ESTADO=true;
         
-        RadioCarro Alejuadiela = new RadioCarro();
+        Radio Alejuadiela = new RadioCarro();
         
         Scanner escaner = new Scanner(System.in);
         while (funcionamiento==0){
