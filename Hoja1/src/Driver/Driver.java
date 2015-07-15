@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+ 
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.InputMismatchException;
@@ -21,7 +22,7 @@ public class Driver {
         boolean ESTADO=true;
         int ingreso=0; banda=0; posicion = 0;
         
-        RadioCarro Alejuadiela = new RadioCarro();
+        Radio Alejuadiela = new RadioCarro();
         
         while (funcionamiento==0){
             //try{
