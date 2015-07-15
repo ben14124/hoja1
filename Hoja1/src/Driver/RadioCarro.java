@@ -1,9 +1,11 @@
-
-/**
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- **/
+/*
+ * Algoritmo y estructura de datos / Seccion 30
+ * Hoja de trabajo 1
+ * Daniela Pocasangre - 14162
+ * Alejandro Rivera - 14213
+ * Juan Diego Benitez - 14124
+ * Programa que implementa la interfaz Radio.
+ */
 
 import java.util.Scanner;
 import java.util.Arrays;
@@ -61,8 +63,8 @@ public class RadioCarro implements Radio {
 					FM = 87.7;
 				}
 				FM = FM + 0.2;
-				System.out.println("\nLa emisora sintonizada es la "+FM);
-                                            regreso = FM;
+				System.out.println("\nLa emisora sintonizada es la "+Math.round((FM)*100.0)/100.0);
+                                            regreso = Math.round((FM)*100.0)/100.0;
 			}
 					
 		}
@@ -81,8 +83,8 @@ public class RadioCarro implements Radio {
 					FM = 108.1;
 				}
 				FM = FM - 0.2;
-				System.out.println("\nLa emisora sintonizada es la "+FM);
-                                            regreso = FM;
+				System.out.println("\nLa emisora sintonizada es la "+Math.round((FM)*100.0)/100.0);
+                                            regreso = Math.round((FM)*100.0)/100.0;
 			}
 
 		}
