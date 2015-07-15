@@ -1,3 +1,4 @@
+
 /**
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -43,21 +44,22 @@ public class RadioCarro implements Radio {
 	}
 	
 	public void Sintonizar(boolean uD){ //uD si es AM o FM
-		while (sintonizacion==true){
-                        movimiento = uD;
+		//while (sintonizacion==true){
+                        //movimiento = uD;
 			if (uD==true){ //Si se desea subir
-				System.out.println("\nIngrese 1 si desea seguir subiendo, 2 para bajar y 3 para salir. ");
-				while(movimiento==true){
-					subirbajar = escaner.nextInt(); //Esto va dentro del while porque hace la "pausa" en 'el (' = tilde)
+
+				//while(movimiento==true){
+					//subirbajar = escaner.nextInt(); //Esto va dentro del while porque hace la "pausa" en 'el (' = tilde)
 					//Aqui iria un try-catch
 
-					if(subirbajar==1){
+					//if(subirbajar==1){
 						if(Band==0){ //Si lo que mandamos antes fue un 0...
 							if(AM == 1610){
 								AM = 520;
 							}
 							AM = AM + 10;
 							System.out.println("\nLa emisora sintonizada es la "+AM);
+                                                        regreso = AM;
 						}
 
 						else if (Band==1){ //Si lo que mandamos antes fue un 1...
@@ -66,29 +68,30 @@ public class RadioCarro implements Radio {
 							}
 							FM = FM + 0.2;
 							System.out.println("\nLa emisora sintonizada es la "+FM);
+                                                        regreso = FM;
 						}
 						
-					} 
+					//} 
 
-					else if (subirbajar==2){ //si desea bajar
-						uD = false;
-                                                movimiento = false;
-					}
+					//else if (subirbajar==2){ //si desea bajar
+					//	uD = false;
+                   //     movimiento = false;
+					//}
 
-					else if (subirbajar==3){
-						sintonizacion = false;
-						movimiento = false;
-					}
+					//else if (subirbajar==3){
+					//	sintonizacion = false;
+					//	movimiento = false;
+					//}
 
-				} //Corchete del while
+				//} //Corchete del while
 			}
                         
 			if (uD==false){ //habria que comprobar si el uD de arriba, al pasar a false se mueve directamente a este. REMOVI ELSE
-				System.out.println("\nIngrese 2 si desea seguir bajando, 1 para subir y 3 para salir. ");
-				while(movimiento==false){
-					subirbajar = escaner.nextInt(); //Esto va dentro del while porque hace la "pausa" en 'el (' = tilde)
+				//System.out.println("\nIngrese 2 si desea seguir bajando, 1 para subir y 3 para salir. ");
+				//while(movimiento==false){
+					//subirbajar = escaner.nextInt(); //Esto va dentro del while porque hace la "pausa" en 'el (' = tilde)
 					//Aqui iria un try-catch
-					if (subirbajar==2){
+					//if (subirbajar==2){
 
 						if(Band==0){
 							if(AM <= 530){
@@ -96,6 +99,7 @@ public class RadioCarro implements Radio {
 							}
 							AM = AM - 10;
 							System.out.println("\nLa emisora sintonizada es la "+AM);
+                                                        regreso = AM;
 						}
 						else if (Band==1){
 							if(FM <= 87.9){
@@ -103,10 +107,11 @@ public class RadioCarro implements Radio {
 							}
 							FM = FM - 0.2;
 							System.out.println("\nLa emisora sintonizada es la "+FM);
+                                                        regreso = FM;
 						}
-					}
+					//}
 
-					else if (subirbajar==1){ //si desea subir
+					/*else if (subirbajar==1){ //si desea subir
 						uD = true;
                                                 movimiento = true;
 					}
@@ -115,11 +120,11 @@ public class RadioCarro implements Radio {
 						sintonizacion = false;
                                                 uD = true;
                                                 movimiento = true;
-					}
+					}*/
 
-				} //Corchete del while
+				//} //Corchete del while
 			}
-		} //sintonizacion
+		//} //sintonizacion
 	}
 	
 	public void Guardar(int Pos){ //En el driver preguntamos la posicion en la que vamos a almacenar 
@@ -138,6 +143,6 @@ public class RadioCarro implements Radio {
 	}
 
 	public double getEmisora(){
-		return regreso;
+            return regreso;
 	}   
 }
