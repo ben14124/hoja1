@@ -44,87 +44,49 @@ public class RadioCarro implements Radio {
 	}
 	
 	public void Sintonizar(boolean uD){ //uD si es AM o FM
-		//while (sintonizacion==true){
-                        //movimiento = uD;
-			if (uD==true){ //Si se desea subir
 
-				//while(movimiento==true){
-					//subirbajar = escaner.nextInt(); //Esto va dentro del while porque hace la "pausa" en 'el (' = tilde)
-					//Aqui iria un try-catch
+		if (uD==true){ //Si se desea subir
 
-					//if(subirbajar==1){
-						if(Band==0){ //Si lo que mandamos antes fue un 0...
-							if(AM == 1610){
-								AM = 520;
-							}
-							AM = AM + 10;
-							System.out.println("\nLa emisora sintonizada es la "+AM);
-                                                        regreso = AM;
-						}
-
-						else if (Band==1){ //Si lo que mandamos antes fue un 1...
-							if(FM >= 107.9){
-								FM = 87.7;
-							}
-							FM = FM + 0.2;
-							System.out.println("\nLa emisora sintonizada es la "+FM);
-                                                        regreso = FM;
-						}
-						
-					//} 
-
-					//else if (subirbajar==2){ //si desea bajar
-					//	uD = false;
-                   //     movimiento = false;
-					//}
-
-					//else if (subirbajar==3){
-					//	sintonizacion = false;
-					//	movimiento = false;
-					//}
-
-				//} //Corchete del while
+			if(Band==0){ //Si lo que mandamos antes fue un 0...
+				if(AM == 1610){
+					AM = 520;
+				}
+				AM = AM + 10;
+				System.out.println("\nLa emisora sintonizada es la "+AM);
+                                            regreso = AM;
 			}
-                        
-			if (uD==false){ //habria que comprobar si el uD de arriba, al pasar a false se mueve directamente a este. REMOVI ELSE
-				//System.out.println("\nIngrese 2 si desea seguir bajando, 1 para subir y 3 para salir. ");
-				//while(movimiento==false){
-					//subirbajar = escaner.nextInt(); //Esto va dentro del while porque hace la "pausa" en 'el (' = tilde)
-					//Aqui iria un try-catch
-					//if (subirbajar==2){
 
-						if(Band==0){
-							if(AM <= 530){
-								AM = 1620;
-							}
-							AM = AM - 10;
-							System.out.println("\nLa emisora sintonizada es la "+AM);
-                                                        regreso = AM;
-						}
-						else if (Band==1){
-							if(FM <= 87.9){
-								FM = 108.1;
-							}
-							FM = FM - 0.2;
-							System.out.println("\nLa emisora sintonizada es la "+FM);
-                                                        regreso = FM;
-						}
-					//}
-
-					/*else if (subirbajar==1){ //si desea subir
-						uD = true;
-                                                movimiento = true;
-					}
-
-					else if (subirbajar==3){
-						sintonizacion = false;
-                                                uD = true;
-                                                movimiento = true;
-					}*/
-
-				//} //Corchete del while
+			else if (Band==1){ //Si lo que mandamos antes fue un 1...
+				if(FM >= 107.9){
+					FM = 87.7;
+				}
+				FM = FM + 0.2;
+				System.out.println("\nLa emisora sintonizada es la "+FM);
+                                            regreso = FM;
 			}
-		//} //sintonizacion
+					
+		}
+                    
+		if (uD==false){ 
+			if(Band==0){
+				if(AM <= 530){
+					AM = 1620;
+				}
+				AM = AM - 10;
+				System.out.println("\nLa emisora sintonizada es la "+AM);
+                                            regreso = AM;
+			}
+			else if (Band==1){
+				if(FM <= 87.9){
+					FM = 108.1;
+				}
+				FM = FM - 0.2;
+				System.out.println("\nLa emisora sintonizada es la "+FM);
+                                            regreso = FM;
+			}
+
+		}
+
 	}
 	
 	public void Guardar(int Pos){ //En el driver preguntamos la posicion en la que vamos a almacenar 
