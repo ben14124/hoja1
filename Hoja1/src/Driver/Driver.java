@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+ 
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.InputMismatchException;
