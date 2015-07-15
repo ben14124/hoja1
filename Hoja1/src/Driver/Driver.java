@@ -18,6 +18,7 @@ public class Driver {
         int funcionamiento = 0;
         int posicion;
         int estacion;
+        boolean ESTADO=true;
         
         RadioCarro Alejuadiela = new RadioCarro();
         
@@ -27,7 +28,9 @@ public class Driver {
                 System.out.println("\nBienvenido a la Radio. Ingrese una opcion: \nEncender (1) o apagar la radio (2)");
                 int ingreso = escaner.nextInt();
                 if (ingreso==1){
+                    Alejuadiela.setESTADO(ESTADO);
                     while (ingreso==1){
+
                         System.out.println("\nQue frecuencia desea seleccionar?: \nAM (1) \nFM (2) \nSalir (3)");
                         banda = escaner.nextInt();
                         if (banda==1){
@@ -117,6 +120,8 @@ public class Driver {
                     } //While ingreso==1
                 } //If de ingreso==1
                 else if (ingreso==2){ //Salida
+                    ESTADO = false;
+                    Alejuadiela.setESTADO(ESTADO);
                     funcionamiento = 3;
                 }
                 
