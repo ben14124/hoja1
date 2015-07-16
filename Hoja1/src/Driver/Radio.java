@@ -23,9 +23,9 @@ public abstract interface Radio {
 	
 	public void Sintonizar(boolean uD); //true para subir, false para bajar
 	
-	public void Guardar(int Pos);
+	public void Guardar(int Pos); 
 	
-	public void Memoria(int Pos);
+	public void Memoria(int Pos); 
 	
 	public double getEmisora();
 	
