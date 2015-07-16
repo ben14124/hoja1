@@ -16,7 +16,7 @@ import java.util.Arrays;
  */
 public class RadioCarro implements Radio {
 
-	private boolean ESTADO, uD;
+	private boolean ESTADO = true, uD;
 	private int Band = 0;
 	private int Pos = 0;
 	private double AM = 530;
